@@ -1,0 +1,92 @@
+<!-- 
+w3c -reglementeaza si propune standarde
+w3.org
+
+user agent-client(browser)
+
+resurse:
+html
+URL-schema(protpcol)://host/path?querry#fragment
+URN=isbn:
+URI=URL+URN
+
+?K=V&k2=V
+    ;
+
+    REQ
+
+    GET http:..   protocolul:HTTP/1.1
+    HEADERS{key:value}
+    BODY{}
+
+
+    RES
+    http/1.1 200 ok
+    headers
+    body
+
+    get /cars/1 ->item  1-path param
+    post /cars {body}
+    put/Patch /cars {body}
+    delete /cars/1
+
+
+ -->
+<!-- DOM =structura ierarhica.. -->
+<!-- DOM Api- -->
+
+<!-- BOM -->
+<!-- BOM API -->
+<!-- mozzila mdn -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>.</title>
+</head>
+
+<body>
+
+    <button id="but" type="button">Click Me!</button>
+    <input id="userInput" type="text" placeholder="Enter item">
+    <br>
+    <ul id="list">
+        <li>Gro</li>
+        <li>Ana</li>
+        <li>Alex</li>
+
+    <ul>
+
+    <script>
+        var button=document.getElementById("but");
+        var input=document.getElementById("userInput");
+        var ul=document.getElementById("list");
+
+        button.addEventListener("click",function(){
+            console.log("click is working");
+            var li=document.createElement("li");
+            li.appendChild(document.createTextNode(input.value));
+            ul.appendChild(li);
+            
+
+
+        });
+
+        
+        input.addEventListener("keypress",function(event){
+            if(event.keyCode === 13){
+            console.log("click is working");
+            var li=document.createElement("li");
+            li.appendChild(document.createTextNode(input.value));
+            ul.appendChild(li);
+            
+
+
+                }        });
+    </script>
+</body>
+
+
+</html>

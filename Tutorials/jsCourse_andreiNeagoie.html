@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+ </head>
+ <body>
+     
+
+<script>
+ 
+ var array=[1,2,3,4,5,6];
+
+// check it is an object or an array
+// arrays are objects in java same as null;
+if(Array.isArray(arr)){
+        console.log(true);
+}
+
+var arr={
+    
+    0:1,
+    1:2,
+    2:3,
+    3:4
+}
+ 
+ console.log(array);
+ console.log(arr);
+
+// pass by ref vs pass y values
+var a=5;
+var b=a;
+
+b++;
+// a=5 b=6
+// passs by value
+let obj1={name:'Yao',password:'123'};
+let obj2=obj1;
+
+obj2.password='easypeasy';
+console.log(obj1);
+// obj1=obj2=with  pass easypeassyy
+// pass by reference
+
+var c=[1,2,3,4,5];
+var d=[].concat(c);
+console.log(d);
+
+let obj={a:'a',b:'b',c:'c'};
+let console={...obj};
+// shallow cloneing
+let superClone=JSON.parse(JSON.stringify(obj))
+
+// 
+
+
+</script>
+
+ </body>
+ </html>

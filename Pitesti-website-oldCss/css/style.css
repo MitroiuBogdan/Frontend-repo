@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.7em;
+}
+
+a {
+        color: #333;
+        text-decoration: none;
+
+}
+h1,h2,h3{
+        padding-bottom: 20px;
+
+}
+
+p{
+    margin: 10px,0;
+}
+
+#navBar {
+        background: #333;
+        color: #fff;
+        overflow: auto;
+
+}
+
+#navBar a {
+        color: #fff;
+
+}
+#navBar h1{
+        float: left;
+        padding-top: 20px;
+}
+#navBar ul{
+        list-style: none;
+        float: right;
+}
+#navBar ul li{
+        float: left;
+}
+#navBar ul li a{
+        display: block;
+        padding: 20px;
+        text-align: center;
+}
+#navBar ul li a:hover{
+  background: #444;
+  color: antiquewhite;
+}
+
+.container {
+        margin: auto;
+        max-width: 1100px;
+        overflow: auto;
+        padding: 0 20px;
+}
+/* Showcase */
+
+#showcase {
+        background: url('img/pitesti.jpg') no-repeat
+        center center/cover;
+        height: 600px;
+
+}
+#showcase .showcase-content{
+        color: #fff;
+        text-align: center;
+        padding-top: 170px;
+
+}
+
+#showcase .showcase-content h1{
+    font-size: 80px;
+    line-height: 1.2em;
+}
+.lead {
+font-size: 25px;
+
+}
+
+ .button{
+        
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 16px;
+        color: #fff;
+        background: #333;
+        border: none;
+        cursor: pointer;
+ }
+
+ .button:hover{
+        color: burlywood;
+ }
+ .btn-light{
+         background: #fff;
+         color: #333;
+ }
+  #showcase .showcase-content p{
+        padding-bottom: 30px;
+        align-content: center;
+  }
+  .text-primary {
+
+        color:#fff;
+  }
+  /* home info */
+  #home_info{
+          height: 400px;
+  }
+  #home_info .info-img{
+          float: left;
+         width: 50%;
+         background: url('img/pitesti2.jpg') no-repeat ;
+        min-height: 100%;
+
+  }
+  #home_info .info-co{
+          float: right;
+          width: 50%;
+          height: 50%;
+          text-align: center;
+          padding: 50px 30px;
+          
+          padding-bottom: 40px;
+  }
+  .bg-dark{
+          background: #333;
+          color: #fff;
+  }
+
+  #home_info .info-co .btn-light{
+                padding: 10px;
+                overflow: hidden;
+
+  }
+  /* */
+
+  .box{
+          float: left;
+          width: 33%;
+          padding:50px;
+          text-align: center;
+  }
+  .box i{
+          margin-bottom: 20px;
+          font-size: 40px;
+  }
+  .main-footer{
+          text-align: center;
+          background: #444;
+          color: #fff;
+          padding: 10px;
+  }
+  .clr{
+          clear: both;
+  }
