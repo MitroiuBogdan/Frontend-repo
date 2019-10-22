@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const elf = {
+            name: 'Orel',
+            wepon: 'bow',
+            attack() {
+                return `${this.name} is attaking with ${this.wepon}`
+            }
+        }
+
+        //factory Functions
+        const elfMethods = {
+            attack() {
+                return 'attack with' + this.wepon
+            }
+        }
+
+        function createElf(name, wepon) {
+            //inheritance
+            //prototypal inheritance
+            let newElf = Object.create(elfMethods)
+            newElf.name = name;
+            newElf.wepon = wepon;
+            return newElf;
+        }
+
+        const peter = createElf('jonnny', 'bow');
+        /// ---------Proper way of doing things-----------
+        //Constructor function
+
+        //we can only add prototypes with this keyword
+        function Elf(name, wepon) {
+            this.name = name;
+            this.wepon = wepon;
+        }
+
+        //Set Methods
+        Elf.prototype.attack = function () {
+            return 'attack with ' + this.wepon
+        }
+        Elf.prototype.build = function () {
+            const self = this;
+            function building() {
+                return self.name + " build more"
+            }
+            return building();
+        }
+
+        const xElf = new Elf('Peter', 'stone');
+        //---------------------------------------------
+        console.log(xElf.attack());
+        console.log(xElf.build());
+        //
+        //Ultimate OOP ES6 class keyword
+
+        class Mage {
+
+            constructor(name, wepon) {
+                this.name = name;
+                this.wepon = wepon;
+
+            }
+            attack() {
+                return 'mage is attaknig with ' + wepon;
+            }
+
+
+        }
+    // instanceof
+    /////////////////////////
+    </script>
+</body>
+
+</html>

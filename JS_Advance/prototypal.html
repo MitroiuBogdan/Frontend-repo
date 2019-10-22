@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const array=[];
+
+        let dragon={
+            name:'Tanya',
+            fire:true,
+            fight(){
+                return 5;
+           },
+            sing(){
+            return `I am ${this.name}, the dragon and i breath FiIRE`
+        },
+            saySomething(){
+            return "Hello World";
+            }}
+
+        let lizard={
+            name:"kiki",
+            fight(){
+                return 1;
+            }
+        }
+
+        const singLizard=dragon.sing.bind(lizard);
+        const sayLizard=dragon.saySomething.bind(lizard);
+        console.log(singLizard());
+        console.log(sayLizard());
+
+        //Prototypal Inheritance
+        //Anti-Pattern inherit
+        lizard.__proto__=dragon;
+        console.log(lizard.fight());
+        console.log(lizard.sing());
+
+        dragon.isPrototypeOf(lizard);
+        //return TRUE;
+
+        for(let prop in lizard){
+            if(lizard.hasOwnProperty(prop)){
+            console.log(prop);   
+            }
+        }
+
+        let human={
+            mortal:true
+            }
+
+            let socrates=Object.create(human);
+            socrates.age=10;
+            console.log(socrates.mortal);
+            //human.isPrototypeOf(socrates) ->true
+
+    </script>
+
+</body>
+
+</html>
