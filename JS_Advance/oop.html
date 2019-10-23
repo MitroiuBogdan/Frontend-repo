@@ -63,21 +63,38 @@
         //
         //Ultimate OOP ES6 class keyword
 
-        class Mage {
-
+        class Charater {
+            
             constructor(name, wepon) {
                 this.name = name;
                 this.wepon = wepon;
 
             }
             attack() {
-                return 'mage is attaknig with ' + wepon;
+                return 'Character is attaknig with ' + wepon;
             }
 
 
         }
+
+        class Mage extends Charater{
+            age=54;
+            constructor(name,wepon,element){
+                    super(name,wepon);
+                    this.element=element;
+            }
+            attack(){
+                return `mage is attakking with ${this.element} ${this.wepon}+${this.age} `;
+            }
+
+        }
     // instanceof
     /////////////////////////
+    const wizard=new Mage("Gogu","wand","fire");
+   // const ofre={...wizard};
+   //Mage,Character ----> constructores
+   //Mage.prototype,Character.prototype ---->Object
+    
     </script>
 </body>
 
