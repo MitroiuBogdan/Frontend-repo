@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const user = {
+            name: "Kim",
+            active: true,
+            cart: [],
+            purches: []
+        }
+
+        //Implement cart feature:
+        // 1.Add items to cart.
+        // 2.add 3% tax to item in cart
+        // 3.buy item:cart -->purchases
+        // 4.Empty cart
+        /////////////////////////////////////////////////////////////
+        //             PURE FUNCTIONS
+        //
+        // *NO SIDE Effects
+        // 
+        const array = [1, 2, 3];
+        //  This function dosent have any side effects
+        //  same imput and output
+        //  PURE FUNCTION
+        //  -1Task
+        //  -return statement
+        //  -pure
+        //  -no shared state
+        //  -predictable
+        //  -composable
+        //  -immutable state
+
+        function removeLastItem(arr) {
+            const newArray = [].concat(arr);
+            newArray.pop();
+            return newArray;
+        }
+
+        //Idempotence  -indeptens
+        // a function that dose what we expect it to do
+        // get the same result even if we call it inside same function
+        //----------------------------------------------
+
+        //Imperative vs Declarative
+
+        //declerative
+        [1, 2, 3].forEach(item => console.log(item));
+
+        //Imperative
+        for (let i; i < 3; i++) { }
+
+        //ex JQuerry -->highly IMPERATIVE
+        // REACT -->DECLARATIVE
+        //-------------------------------------------------
+
+        //Immutability (not changeing the date and the state)
+        // *make copy of the state and then return it
+        // ex:
+
+        const obj = {
+            key: "Value"
+        }
+        const clone = function (object) {
+            return { ...obj };
+        }
+
+        const updateName = function (object) {
+            const obj2 = clone(object);
+            obj2.key = 'Value2'
+            return obj2;
+        }
+
+        // **Rewind ->HOF High Order Function
+        //  Takes functions as an argument
+        //  Or Return a function (callback)
+        const hof = () => () => 5;
+        hof()();
+
+        const hof2 = (fn) => fn(5);
+        hof2(function a(x) { return x; })
+        //
+        const closure = function () {
+            let count = 0;
+            return function increment() {
+                count++;
+                return count;
+            }
+            const increment = closure();
+            increment();//1
+            increment();//2
+            increment();//3
+        }
+
+        //////////////////////////////////
+        //CURRYING
+        //
+        const multiply = (a, b) => a * b;
+        const curryMulyiply = (a) => (b) => a * b;
+        curryMulyiply(5)(4);
+
+        /////////////////////////////////////
+        //Memoization ~~~~~~~Caching
+        let cache = {};
+        function memoizedAddTo80(n) {
+            if (n in cache) {
+                return cache[n];
+            } else {
+                console.log("IT TAKES A LONG TIME")
+                cache[n] = 5 + 80;
+                return cache[n];
+            }
+        }
+
+        console.log(memoizedAddTo80(5));
+        console.log("BR");
+        console.log(memoizedAddTo80(5));
+
+        //COMPOSE and PIPE
+        //anny data transf shoud be obivous
+        // data-->fn--->newForrm data-->fn-->new new form data
+        //RAMBDA library
+
+        const compose=(f,g)=>(data)=>f(g(data))
+        const multiplyBy3 =(data) =>data*3;
+        const makePositive=(data) =>Math.abs(data);
+
+
+        const multiplyBy3AndAbsolute=compose(multiplyBy3,makePositive)
+
+        console.log(multiplyBy3AndAbsolute(-100));
+
+    </script>
+</body>
+
+</html>
